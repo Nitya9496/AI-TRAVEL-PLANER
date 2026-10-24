@@ -528,10 +528,10 @@ export default function App() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-2.5 rounded-2xl text-xs font-black transition-all flex items-center gap-2 shrink-0 cursor-pointer ${
+                  className={`px-4 py-2.5 rounded-2xl text-xs font-black transition-all duration-200 flex items-center gap-2 shrink-0 cursor-pointer ${
                     isActive
                       ? 'bg-gradient-to-r from-[#0c2e28] to-emerald-700 text-white shadow-md'
-                      : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
+                      : 'text-stone-600 hover:text-emerald-950 hover:bg-emerald-50/70 hover:shadow-xs hover:-translate-y-0.5 active:scale-95'
                   }`}
                 >
                   <Icon className="w-4 h-4" />

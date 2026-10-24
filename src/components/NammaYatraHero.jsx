@@ -60,21 +60,25 @@ export default function NammaYatraHero({
       <header className="relative z-30 pt-4 sm:pt-6 px-4 sm:px-6 max-w-5xl mx-auto w-full">
         <div className="bg-white/95 backdrop-blur-md rounded-3xl sm:rounded-full px-5 sm:px-8 py-3 shadow-2xl border border-white/60 flex items-center justify-between gap-4">
           {/* Left Brand: Official Karnataka Emblem + NAMMA YATRA with Flag Accent */}
-          <div className="flex items-center gap-2.5 shrink-0">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-xs overflow-hidden p-0.5 border border-amber-300/80">
+          <div
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2.5 shrink-0 cursor-pointer group transition-all duration-300 select-none"
+            title="Namma Yatra - Karnataka AI Tourism"
+          >
+            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-xs overflow-hidden p-0.5 border border-amber-300/80 group-hover:border-amber-400 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
               <img
                 src="/karnataka-emblem.png"
                 alt="Government of Karnataka Emblem"
-                className="w-full h-full object-contain drop-shadow-xs"
+                className="w-full h-full object-contain drop-shadow-xs group-hover:rotate-3 transition-transform duration-300"
               />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="font-black tracking-widest text-lg sm:text-xl text-[#0c2e28] font-sans">
+                <span className="font-black tracking-widest text-lg sm:text-xl text-[#0c2e28] group-hover:text-emerald-700 transition-colors duration-200 font-sans">
                   NAMMA YATRA
                 </span>
                 {/* Karnataka Flag Badge */}
-                <div className="hidden sm:flex items-center text-[9px] font-black rounded overflow-hidden shadow-xs border border-amber-300">
+                <div className="hidden sm:flex items-center text-[9px] font-black rounded overflow-hidden shadow-xs border border-amber-300 group-hover:scale-105 group-hover:shadow-sm transition-all duration-200">
                   <span className="bg-yellow-400 text-yellow-950 px-1 py-0.2">ಕರ್ನಾಟಕ</span>
                   <span className="bg-red-600 text-white px-1 py-0.2">KARNATAKA</span>
                 </div>
@@ -82,12 +86,12 @@ export default function NammaYatraHero({
             </div>
           </div>
 
-          {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7 text-xs sm:text-sm font-semibold">
+          {/* Center Navigation Links with Interactive Hover */}
+          <nav className="hidden md:flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold">
             <button
               type="button"
               onClick={() => setActiveModal('destinations')}
-              className="text-emerald-900 font-bold border-b-2 border-emerald-700 pb-0.5 cursor-pointer hover:text-emerald-950 transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-emerald-900 font-bold bg-emerald-50/70 hover:bg-emerald-100 hover:text-emerald-950 hover:shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               Destinations
             </button>
@@ -96,42 +100,42 @@ export default function NammaYatraHero({
               onClick={() => {
                 document.getElementById('features-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-stone-600 hover:text-stone-900 cursor-pointer transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-stone-600 hover:text-emerald-900 hover:bg-emerald-50/70 hover:shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               Features
             </button>
             <button
               type="button"
               onClick={() => setActiveModal('howItWorks')}
-              className="text-stone-600 hover:text-stone-900 cursor-pointer transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-stone-600 hover:text-emerald-900 hover:bg-emerald-50/70 hover:shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               How it Works
             </button>
             <button
               type="button"
               onClick={() => setActiveModal('pricing')}
-              className="text-stone-600 hover:text-stone-900 cursor-pointer transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-stone-600 hover:text-emerald-900 hover:bg-emerald-50/70 hover:shadow-sm hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               Travel Pass
             </button>
           </nav>
 
-          {/* Right Action Buttons */}
+          {/* Right Action Buttons with Interactive Hover */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Language Toggle */}
+            {/* Language Toggle with Hover Effect */}
             <button
               type="button"
               onClick={onToggleLang}
-              className="px-2.5 py-1.5 rounded-full text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 transition-all flex items-center gap-1 cursor-pointer"
+              className="px-3 py-1.5 rounded-full text-xs font-bold bg-amber-50 hover:bg-amber-100/90 text-amber-900 border border-amber-300 hover:border-amber-400 hover:shadow-sm hover:scale-105 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 flex items-center gap-1.5 cursor-pointer"
               title="Toggle English / Kannada"
             >
-              <Languages className="w-3.5 h-3.5 text-red-600" />
+              <Languages className="w-3.5 h-3.5 text-red-600 transition-transform duration-200 hover:rotate-12" />
               <span>{lang === 'en' ? 'ಕನ್ನಡ' : 'EN'}</span>
             </button>
 
             {currentUser ? (
-              <div className="flex items-center gap-2 bg-stone-100 py-1 px-2.5 rounded-full border border-stone-200">
-                <div className="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold">
+              <div className="flex items-center gap-2 bg-stone-100 hover:bg-stone-200/70 hover:shadow-xs transition-all duration-200 py-1 px-3 rounded-full border border-stone-200 cursor-pointer">
+                <div className="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
                   {currentUser.displayName ? currentUser.displayName.charAt(0).toUpperCase() : 'U'}
                 </div>
                 <span className="text-xs font-bold text-stone-800 hidden sm:inline-block max-w-[85px] truncate">
@@ -141,7 +145,7 @@ export default function NammaYatraHero({
                   type="button"
                   onClick={onSignOut}
                   title="Sign Out"
-                  className="p-1 hover:text-red-600 text-stone-500 cursor-pointer transition-colors"
+                  className="p-1 hover:text-red-600 hover:scale-115 text-stone-500 cursor-pointer transition-all duration-200"
                 >
                   <LogOut className="w-3.5 h-3.5" />
                 </button>
@@ -150,7 +154,7 @@ export default function NammaYatraHero({
               <button
                 type="button"
                 onClick={onOpenAuth}
-                className="text-stone-700 hover:text-stone-950 font-bold text-xs sm:text-sm cursor-pointer transition-colors px-1"
+                className="px-3.5 py-1.5 rounded-full text-stone-700 hover:text-stone-950 hover:bg-stone-100 hover:shadow-xs hover:-translate-y-0.5 active:scale-95 font-bold text-xs sm:text-sm cursor-pointer transition-all duration-200"
               >
                 Login
               </button>
@@ -165,7 +169,7 @@ export default function NammaYatraHero({
                   el.select();
                 }
               }}
-              className="bg-[#0c2e28] hover:bg-[#071f1b] active:scale-95 text-white px-5 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
+              className="bg-[#0c2e28] hover:bg-[#071f1b] hover:shadow-xl hover:shadow-emerald-950/25 hover:-translate-y-0.5 hover:scale-105 active:scale-95 text-white px-5 sm:px-6 py-2 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all duration-200 cursor-pointer"
             >
               Get Started
             </button>
@@ -253,7 +257,7 @@ export default function NammaYatraHero({
                 'Plan a 4-day royal heritage & highlands safari covering Bengaluru, Mysuru Palace, Srirangapatna and Coorg coffee estates...'
               )
             }
-            className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm cursor-pointer transition-all"
+            className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/25 hover:border-white/50 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 active:scale-95 border border-white/20 backdrop-blur-sm cursor-pointer transition-all duration-200"
           >
             🏰 Mysuru &amp; Coorg Safari (4 Days)
           </button>
@@ -264,7 +268,7 @@ export default function NammaYatraHero({
                 '3-day coastal Karnataka beach trail covering Gokarna, Om Beach cliff walk, and Murudeshwar Shiva temple...'
               )
             }
-            className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm cursor-pointer transition-all"
+            className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/25 hover:border-white/50 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 active:scale-95 border border-white/20 backdrop-blur-sm cursor-pointer transition-all duration-200"
           >
             🏖️ Gokarna &amp; Coastal Cliffs (3 Days)
           </button>
@@ -275,7 +279,7 @@ export default function NammaYatraHero({
                 '3-day UNESCO archaeological expedition through the golden boulder ruins, stone chariot, and temples of Hampi...'
               )
             }
-            className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm cursor-pointer transition-all"
+            className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/25 hover:border-white/50 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 active:scale-95 border border-white/20 backdrop-blur-sm cursor-pointer transition-all duration-200"
           >
             🏛️ Hampi UNESCO Ruins (3 Days)
           </button>
@@ -286,7 +290,7 @@ export default function NammaYatraHero({
                 '3-day coffee plantation and mountain trek in Chikkamagaluru, Mullayanagiri peak, and Hebbe falls...'
               )
             }
-            className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm cursor-pointer transition-all"
+            className="px-3 py-1 rounded-full bg-white/10 hover:bg-white/25 hover:border-white/50 hover:shadow-md hover:scale-105 hover:-translate-y-0.5 active:scale-95 border border-white/20 backdrop-blur-sm cursor-pointer transition-all duration-200"
           >
             ☕ Chikkamagaluru Coffee Trail (3 Days)
           </button>
