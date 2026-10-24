@@ -272,7 +272,7 @@ export default function AuthModal({ isOpen, onClose, lang = 'en', onSuccess }) {
       return 'Phone sign-in is disabled in your Firebase Console. Please go to Firebase Console > Authentication > Sign-in method and enable "Phone", or use Instant Demo Sign-In below.';
     }
     if (code.includes('unauthorized-domain')) {
-      return 'This domain is not in Firebase Authorized Domains. Add localhost/IP under Firebase Console > Authentication > Settings > Authorized domains.';
+      return 'Domain not authorized! Please add "aitravelplanerkarnataka.vercel.app" in Firebase Console > Authentication > Settings > Authorized domains.';
     }
     if (code.includes('quota-exceeded')) {
       return 'Daily SMS quota reached on Firebase Spark plan (10 SMS/day limit). Click "Instant Demo Sign-In" below to log in immediately.';
