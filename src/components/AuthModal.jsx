@@ -65,25 +65,32 @@ export default function AuthModal({ isOpen, onClose, lang = 'en', onSuccess }) {
       }
       window.recaptchaVerifier = null;
     }
-    const container = document.getElementById('recaptcha-container');
-    if (container) {
-      container.innerHTML = '';
+    const wrapper = document.getElementById('recaptcha-wrapper');
+    if (wrapper) {
+      wrapper.innerHTML = '';
     }
   };
 
-  // Initialize or get persistent reCAPTCHA verifier for Phone Auth
+  // Initialize or get fresh reCAPTCHA verifier with dynamic container to completely prevent "already been rendered" error
   const getRecaptchaVerifier = () => {
     if (window.recaptchaVerifier) {
       return window.recaptchaVerifier;
     }
 
-    const container = document.getElementById('recaptcha-container');
-    if (!container) {
-      throw new Error('reCAPTCHA container missing in DOM');
+    let wrapper = document.getElementById('recaptcha-wrapper');
+    if (!wrapper) {
+      wrapper = document.createElement('div');
+      wrapper.id = 'recaptcha-wrapper';
+      document.body.appendChild(wrapper);
     }
-    container.innerHTML = '';
+    wrapper.innerHTML = '';
 
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+    const freshTarget = document.createElement('div');
+    const uniqueId = `recaptcha-target-${Date.now()}`;
+    freshTarget.id = uniqueId;
+    wrapper.appendChild(freshTarget);
+
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, uniqueId, {
       size: 'invisible',
       callback: () => {
         // reCAPTCHA solved
