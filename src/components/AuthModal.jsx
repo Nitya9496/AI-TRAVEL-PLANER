@@ -555,27 +555,6 @@ export default function AuthModal({ isOpen, onClose, lang = 'en', onSuccess }) {
                     </div>
                   </div>
 
-                  {/* Telecom & Testing Guidance Box */}
-                  <div className="bg-amber-50/70 border border-amber-200 rounded-2xl p-3 text-[11px] text-amber-950 space-y-1">
-                    <div className="font-bold flex items-center gap-1.5 text-amber-900">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                      <span>Real SMS Delivery &amp; Demo Guidance</span>
-                    </div>
-                    <p className="text-stone-600 leading-relaxed text-[11px]">
-                      Real SMS to Indian numbers may be delayed or filtered by telecom operators (TRAI DLT mandate) and is capped at 10 SMS/day on Firebase Spark tier.
-                    </p>
-                    <div className="pt-1 flex items-center justify-between text-[10px]">
-                      <span className="text-stone-500">Recommended Test Number:</span>
-                      <button
-                        type="button"
-                        onClick={() => setPhone('9876543210')}
-                        className="font-bold text-amber-800 underline cursor-pointer"
-                      >
-                        Auto-Fill 9876543210
-                      </button>
-                    </div>
-                  </div>
-
                   <button
                     type="submit"
                     disabled={loading || !phone.trim()}
