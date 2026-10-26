@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bingbot specific rules
+User-agent: Bingbot
+Allow: /
+
+# Host
+Host: https://aitravelplanerkarnataka.vercel.app
+
+# Sitemaps
+Sitemap: https://aitravelplanerkarnataka.vercel.app/sitemap.xml

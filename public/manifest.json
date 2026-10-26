@@ -1,0 +1,21 @@
+{
+  "name": "Namma Yatra: AI Travel Planner for Karnataka",
+  "short_name": "Namma Yatra",
+  "description": "Autonomous AI Travel Concierge & Real-Time Logistics Ecosystem for Karnataka Tourism (ನಮ್ಮ ಯಾತ್ರೆ)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#d97706",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["travel", "navigation", "lifestyle"],
+  "icons": [
+    {
+      "src": "/karnataka-emblem.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

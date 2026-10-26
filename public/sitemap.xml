@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage / Main App -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aitravelplanerkarnataka.vercel.app/hero-coastal.jpg</image:loc>
+      <image:title>Namma Yatra - AI Travel Planner for Karnataka</image:title>
+      <image:caption>Autonomous Karnataka Tourism and Itinerary Concierge</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Curated Flagship Circuits -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#circuits</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Smart Transit & Western Ghats Radar -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#transit</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cultural Immersion & Kannada Kit -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#culture</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Eco Wildlife & Bandipur Night Curfew Radar -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#wildlife</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Interactive Leaflet GIS Map -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#map</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Frequently Asked Questions -->
+  <url>
+    <loc>https://aitravelplanerkarnataka.vercel.app/#faq</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
